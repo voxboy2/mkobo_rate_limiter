@@ -2,13 +2,13 @@
 
 ### To implement an api, there are several ways to do that but we will make use of a third-party middlware built for express framework of node js.
 
-##### notes:
+##### Important Notes:
 1. Its assumed node js and express installed on your machine/server
 1. Its assumed we are working on an application which we have built an api that simulates or performs user authentication,if you dont have kindly look for a boiler plate of node js api authentications or download this one with link https://github.com/voxboy2/mkobo_rate_limiter:
 1. Run npm i on your terminal
 1. Its assumed you have knowledge of mongodb database and implementing it with node js.
 
-###### lets goooooooo:
+##### Lets Goooooooo:
 
 * Install the third party middleware called express-rate-limit like this "npm i express-rate-limit --save"
 
