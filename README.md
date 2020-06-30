@@ -27,9 +27,9 @@ lets goooooooo:
 
 });
 
-``` 
 
-```
+
+
  windowsms:for time which in our case is 60 mins(1 hour)
  max: stands for the maximum limit a user can access a certain page
  message: stands for the message we send to the user.
@@ -38,10 +38,14 @@ lets goooooooo:
 * we then go to our routes middleware still in the same index.js and add the limiter to the routes 
 in our case we have two routes: 
   1. one for user authentication:
+```
 app.use('/api/user', authRoute)
+```
 
   2. another one for the page the user tries to access when he is authenticated which is this:
+```
 app.use('/api/posts', limiter, postRoute)
+```
 
 * Download postman or insomnia on your system 
 
@@ -58,7 +62,9 @@ in this format
 you will receive a message and a token
 * put the token in the header 
 in this manner "auth-token  your token"
-*navigate to http://localhost:3000/api/posts send the get request 5 times clicking send button 5 times after the fifth time you get a message.
+![alt text](https://github.com/voxboy2/mkobo_rate_limiter/blob/master/images/3.png)
+
+* navigate to http://localhost:3000/api/posts send the get request 5 times clicking send button 5 times after the fifth time you get a message.
 
 ![Github Logo] (/images/4.png)
 
