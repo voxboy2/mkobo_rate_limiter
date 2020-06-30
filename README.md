@@ -4,9 +4,9 @@
 
 notes:
 1. Its assumed node js and express installed on your machine/server
-1. Its assumed we are working on an application which we have built an api that simulates or performs user authentication,if you dont have kindly look for a boiler plate of node js api authentications or download this one with link:
+1. Its assumed we are working on an application which we have built an api that simulates or performs user authentication,if you dont have kindly look for a boiler plate of node js api authentications or download this one with link https://github.com/voxboy2/mkobo_rate_limiter:
 1. Run npm i on your terminal
-1. Its assumed you have knowledge of mongodb database and implementing it iwth node js.
+1. Its assumed you have knowledge of mongodb database and implementing it with node js.
 
 lets goooooooo:
 
@@ -22,17 +22,19 @@ lets goooooooo:
 
 ``` const limiter = rateLimit({
   windowMs: 60 * 1000, 
+
   max: 5,
+
   message: "Too many accounts created from this IP, please try"
 
 });
 
-
-
-
  windowsms:for time which in our case is 60 mins(1 hour)
+
  max: stands for the maximum limit a user can access a certain page
+
  message: stands for the message we send to the user.
+
 ```
 
 * we then go to our routes middleware still in the same index.js and add the limiter to the routes 
@@ -42,7 +44,7 @@ in our case we have two routes:
 app.use('/api/user', authRoute)
 ```
 
-  2. another one for the page the user tries to access when he is authenticated which is this:
+  1. another one for the page the user tries to access when he is authenticated which is this:
 ```
 app.use('/api/posts', limiter, postRoute)
 ```
@@ -59,20 +61,28 @@ in this format
              "password":pass11
 }
 ```
-you will receive a message and a token
+you will receive a message and a token after registering.
+![alt text](https://github.com/voxboy2/mkobo_rate_limiter/blob/master/images/2.png)
+
+
+
+
 * put the token in the header 
 in this manner "auth-token  your token"
 ![alt text](https://github.com/voxboy2/mkobo_rate_limiter/blob/master/images/3.png)
 
 * navigate to http://localhost:3000/api/posts send the get request 5 times clicking send button 5 times after the fifth time you get a message.
 
-![Github Logo] (/images/4.png)
+![alt text](https://github.com/voxboy2/mkobo_rate_limiter/blob/master/images/4.png)
+
+
+![alt text](https://github.com/voxboy2/mkobo_rate_limiter/blob/master/images/5.png)
 
 
 
 
 
-Be glad you have successfully implemented a rate limiter
+Be glad you have successfully implemented a rate limiter in your node js app.
 
 
 
